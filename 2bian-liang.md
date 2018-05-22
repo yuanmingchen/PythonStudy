@@ -37,7 +37,7 @@ Python可以处理任意大小的整数，当然包括负整数，在程序中�
 ```
 print('I\'m ok.')
 #输出如下：
-I'm ok.
+#I'm ok.
 
 print('I\'m learning\nPython.')
 #输出如下：
