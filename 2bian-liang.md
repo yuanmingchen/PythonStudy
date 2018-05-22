@@ -101,6 +101,18 @@ True and True
 #输出：True
  True and False
 #输出：False
+True or True
+#输出：True
+True or False
+#输出：True
+not True
+#输出：False
+not False
+#输出：True
+5 > 3 or 1 > 3
+#输出：True
+not 1 > 2
+True
 ```
 
 
