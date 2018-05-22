@@ -74,7 +74,7 @@ print(r'\\\t\\')
 例：
 
 ```py
- print('''line1
+print('''line1
 ... line2
 ... line3''')
 '''
@@ -83,6 +83,15 @@ line1
 line2
 line3
 '''
+
+print(r'''hello,\n
+world''')
+'''
+hello,\n 
+world 
+'''
+
+
 ```
 
 
