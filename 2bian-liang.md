@@ -99,6 +99,7 @@ world
 布尔值和布尔代数的表示完全一致，一个布尔值只有`True`、`False`两种值，布尔值可以用and、or和not运算。
 
 ```py
+# -*- coding: utf-8 -*-
 True and True
 #输出：True
  True and False
@@ -133,6 +134,4 @@ a = "ABC"; # 错误：不能把字符串赋给整型变量
 ```
 
 和静态语言相比，动态语言更灵活，就是这个原因。
-
-
 
