@@ -90,8 +90,17 @@ world''')
 hello,\n 
 world 
 '''
+```
 
+#### （4）布尔值
 
+布尔值和布尔代数的表示完全一致，一个布尔值只有`True`、`False`两种值，布尔值可以用and、or和not运算。
+
+```py
+True and True
+#输出：True
+ True and False
+#输出：False
 ```
 
 
