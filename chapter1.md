@@ -10,8 +10,10 @@ name变量接收输入的内容。按回车结束输入。
 
 ### （2）输出
 
+print\(\)
+
 ```
-print('hello, world')
+print('hello, world') #输出一个字符串
 print('The quick brown fox', 'jumps over', 'the lazy dog')
 ```
 
