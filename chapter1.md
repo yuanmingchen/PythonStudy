@@ -14,7 +14,7 @@ print\(\)
 
 ```
 print('hello, world') #输出一个字符串
-print('The quick brown fox', 'jumps over', 'the lazy dog')#逗号将会用空格来代替
+print('The quick brown fox', 'jumps over', 'the lazy dog') #逗号将会用空格来代替
 ```
 
 
