@@ -62,5 +62,24 @@ UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 3: invalid 
 '''
 ```
 
+4.str和bytes在len\(\)方法方面的区别：
+
+str的len\(\)方法输出的是字符的个数，而bytes类型的len方法输出的是字节的个数。
+
+举例：
+
+```py
+>>> len('ABC')
+3
+>>> len('中文')
+2
+>>> len(b'ABC')
+3
+>>> len(b'\xe4\xb8\xad\xe6\x96\x87')
+6
+>>> len('中文'.encode('utf-8'))
+6
+```
+
 
 
