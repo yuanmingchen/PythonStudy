@@ -18,5 +18,11 @@ Unicode编码把所有语言都统一到一套编码里，这样就不会再有�
 
 （2）用记事本**编辑**的时候，从文件读取的UTF-8字符被**转换为Unicode字符**到内存里，编辑**完成**后，**保存**的时候再把Unicode**转换为UTF-8**保存到文件。
 
+![](https://cdn.liaoxuefeng.com/cdn/files/attachments/001387245992536e2ba28125cf04f5c8985dbc94a02245e000/0)![](https://cdn.liaoxuefeng.com/cdn/files/attachments/001387245979827634fd6204f9346a1ae6358d9ed051666000/0)
+
+#### 二、python字符串编码
+
+
+
 
 
