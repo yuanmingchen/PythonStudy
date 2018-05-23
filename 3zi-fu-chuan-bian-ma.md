@@ -48,7 +48,7 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1: ordin
 '''
 ```
 
-（2）**解码：**反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode\(\)方法：
+（2）**解码：**反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode\(\)方法，decode\(\)方法是bytes类型的方法，输出的是str类型。
 
 ```py
 b'ABC'.decode('ascii')#解码为'ABC'
