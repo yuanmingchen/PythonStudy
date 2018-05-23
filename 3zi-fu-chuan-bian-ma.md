@@ -102,5 +102,20 @@ str的len\(\)方法输出的是字符的个数，而bytes类型的len方法输�
 
 ##### 6.格式化
 
+（1）类似C语言的格式化：
+
+```py
+>>> 'Hello, %s' % 'world'
+'Hello, world'
+>>> 'Hi, %s, you have $%d.' % ('Michael', 1000000)
+'Hi, Michael, you have $1000000.'
+>>> print('%2d-%02d' % (3, 1))
+>>> print('%.2f' % 3.1415926)
+>>> 'Age: %s. Gender: %s' % (25, True)
+'Age: 25. Gender: True'
+>>> 'growth rate: %d %%' % 7
+'growth rate: 7 %'
+```
+
 
 
