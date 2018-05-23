@@ -35,7 +35,7 @@ chr(25991)    #输出：'文'
 
 3.由于Python的字符串类型是str，在内存中以Unicode表示，一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。Python对bytes类型的数据用带b前缀的单引号或双引号表示：x = b'ABC'。要注意区分'ABC'和b'ABC'，前者是str，后者虽然内容显示得和前者一样，但bytes的每个字符都只占用一个字节。
 
-以Unicode表示的str通过encode\(\)方法可以编码为指定的bytes（在bytes中，无法显示为ASCII字符的字节，用\x\#\#显示）：
+（1）**编码：**以Unicode表示的str通过encode\(\)方法可以编码为指定的bytes（在bytes中，无法显示为ASCII字符的字节，用\x\#\#显示）：
 
 ```py
 'ABC'.encode('ascii') #转换为了b'ABC'
@@ -45,6 +45,20 @@ chr(25991)    #输出：'文'
 报错：转换为了Traceback (most recent call last):
 File "<stdin>", line 1, in <module>
 UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1: ordinal not in range(128)
+'''
+```
+
+（2）**解码：**反过来，如果我们从网络或磁盘上读取了字节流，那么读到的数据就是bytes。要把bytes变为str，就需要用decode\(\)方法：
+
+```py
+b'ABC'.decode('ascii')#解码为'ABC'
+ b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8')#解码为'中文'
+b'\xe4\xb8\xad\xff'.decode('utf-8')
+'''
+当前编码无法解码时报错：
+Traceback (most recent call last):
+  ...
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 3: invalid start byte
 '''
 ```
 
