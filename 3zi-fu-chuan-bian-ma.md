@@ -52,7 +52,7 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1: ordin
 
 ```py
 b'ABC'.decode('ascii')#解码为'ABC'
- b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8')#解码为'中文'
+b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-8')#解码为'中文'
 b'\xe4\xb8\xad\xff'.decode('utf-8')
 '''
 当前编码无法解码时报错：
