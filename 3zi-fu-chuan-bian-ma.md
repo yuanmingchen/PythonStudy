@@ -35,7 +35,7 @@ chr(25991)    #输出：'文'
 
 3.由于Python的字符串类型是str，在内存中以Unicode表示，一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。Python对bytes类型的数据用带b前缀的单引号或双引号表示：x = b'ABC'。要注意区分'ABC'和b'ABC'，前者是str，后者虽然内容显示得和前者一样，但bytes的每个字符都只占用一个字节。
 
-（1）**编码：**以Unicode表示的str通过encode\(\)方法可以编码为指定的bytes（在bytes中，无法显示为ASCII字符的字节，用\x\#\#显示），encode（）方法是str类型的方法，输出的是bytes类型。
+（1）**编码：**以Unicode表示的str通过encode\(\)方法可以编码为指定的bytes（在bytes中，无法显示为ASCII字符的字节，用\x\#\#显示），encode\(\)方法是str类型的方法，输出的是bytes类型。
 
 ```py
 'ABC'.encode('ascii') #转换为了b'ABC'
