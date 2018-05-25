@@ -54,7 +54,7 @@ for...in循环用于遍历数组中的元素较为方便
 names = ['Michael', 'Bob', 'Tracy']
 for name in names:
     print(name)
-
+输出：
 Michael
 Bob
 Tracy
