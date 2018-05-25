@@ -60,7 +60,7 @@ Bob
 Tracy
 ```
 
-Python提供一个range\(\)函数，可以生成一个整数序列，再通过list\(\)函数可以转换为list。比如range\(5\)生成的序列是从0开始**小于5**的整数，range\(101\)就可以生成0-100的整数序列，计算如下：
+Python提供一个range\(\)函数，可以生成一个整数序列，再通过list\(\)函数可以转换为list。Python3 中 range\(\) 函数返回的结果是一个整数序列的对象，而不是列表。比如range\(5\)生成的序列是从0开始**小于5**的整数，range\(101\)就可以生成0-100的整数序列，计算如下：
 
 ```py
 sum = 0
@@ -107,6 +107,42 @@ while n < 10:
     if n % 2 == 0: # 如果n是偶数，执行continue
     # continue语句会直接继续下一轮循环，后续的print()语句不会执行
     print(n)
+```
+
+```py
+# -*- coding: utf-8 -*-
+sum = 0
+for x in range(101):	
+	sum = sum + x
+print("for计算的0-100之和是："+str(sum))
+
+sum = 0
+i = 0
+ls = [1,2,3,5,8,9,11,25,36,78,125,652]
+while i<len(ls):
+	sum = sum + ls[i]
+	i = i+1
+	
+print("while计算的数组之和是："+str(sum))
+
+sum = 0
+i = 0
+while i<len(ls):
+	if ls[i]>10:
+		break
+	sum = sum + ls[i]
+	i = i+1
+print("while+break计算的数组小于10的元素之和是："+str(sum))
+
+sum = 0
+i = 0
+while i<len(ls):
+	if ls[i]<10:
+		i = i + 1
+		continue
+	sum = sum + ls[i]
+	i = i+1
+print("while+continue计算的数组大于10的元素之和是："+str(sum))
 ```
 
 
