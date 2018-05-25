@@ -33,18 +33,22 @@ print("请输入身高（cm）：")
 height = float(input())
 bmi = weight/(height*height)
 if bmi<18.5:
-	print("过轻")
+    print("过轻")
 elif bmi<23:
-	print("正常")
+    print("正常")
 elif bmi<28:
-	print("过重")
+    print("过重")
 elif bmi<32:
-	print("肥胖")
+    print("肥胖")
 else:
-	print("过度肥胖")
+    print("过度肥胖")
 ```
 
-##### 2.
+### 二、循环
+
+1.for循环
+
+
 
 
 
