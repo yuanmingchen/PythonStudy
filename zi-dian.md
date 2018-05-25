@@ -49,5 +49,16 @@ False
 -1
 ```
 
+##### 4.删除一个key-value
+
+使用pop（key）的方法移除一个键值对。
+
+```py
+>>> d.pop('Bob')
+75
+>>> d
+{'Michael': 95, 'Tracy': 85}
+```
+
 
 
