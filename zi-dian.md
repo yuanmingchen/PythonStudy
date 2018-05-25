@@ -100,7 +100,7 @@ TypeError: unhashable type: 'list'
 
 ### 二、set
 
-set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。set就是数学中的集合。集合的特性：无序、互异性（无重复）、确定性（对应于）的特性同样适用于set。
+set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。set就是数学中的集合。集合的特性：无序、互异性（无重复）、确定性（对应于set每个元素都应该是不可变对象）的特性同样适用于set。
 
 ##### 1.定义一个set
 
