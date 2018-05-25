@@ -86,9 +86,28 @@ print(sum)
 
 这两个关键字的用法与java和C语言是一样的。程序遇到break会跳出当前的循环，直接执行当前循环结束后的代码，而continue关键字则是终止本次循环，开始下一次循环。
 
+break：提前结束整个循环。
 
+continue：提前结束本次循环。
 
+```py
+#break的用法示例
+n = 1
+while n <= 100:
+    if n > 10: # 当n = 11时，条件满足，执行break语句
+        break # break语句会结束当前循环
+    print(n)
+    n = n + 1
+print('END')
 
+#continue的用法示例
+n = 0
+while n < 10:
+    n = n + 1
+    if n % 2 == 0: # 如果n是偶数，执行continue
+    # continue语句会直接继续下一轮循环，后续的print()语句不会执行
+    print(n)
+```
 
 
 
