@@ -88,7 +88,7 @@ print(sum)
 
 break：提前结束整个循环。
 
-continue：提前结束本次循环。
+continue：提前结束本轮循环。
 
 ```py
 #break的用法示例
