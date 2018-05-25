@@ -56,7 +56,32 @@ IndexError: list index out of range
 >>> classmates.insert(1, 'Jack')
 >>> classmates
 ['Michael', 'Jack', 'Bob', 'Tracy', 'Adam']
+```
 
+##### 5.删除元素
+
+pop方法移除数组的一个元素，参数为要移除的元素所在的位置坐标。若省略参数，默认移除数组最后一个元素。
+
+```py
+>>> classmates.pop()
+'Adam'
+>>> classmates
+['Michael', 'Jack', 'Bob', 'Tracy']
+
+>>> classmates.pop(1)
+'Jack'
+>>> classmates
+['Michael', 'Bob', 'Tracy']
+```
+
+##### 6.其他方法
+
+len方法返回数组的元素个数。
+
+```py
+>>> s = ['python', 'java', ['asp', 'php'], 'scheme']
+>>> len(s)
+4
 ```
 
 
