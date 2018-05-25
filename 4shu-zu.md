@@ -99,7 +99,7 @@ len方法返回数组的元素个数。
 
 ### 二、tuple
 
-tuple和list非常类似，也是有序列表，但是tuple一旦初始化就不能修改，相当于被加了java中的final关键字的list。
+tuple和list非常类似，也是有序列表，但是tuple一旦初始化就不能修改，相当于java中被加了的final关键字的数组。
 
 ##### 1.
 
