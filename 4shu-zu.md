@@ -4,7 +4,7 @@
 
 ##### 1.定义方式
 
-```
+```py
 >>> classmates = ['Michael', 'Bob', 'Tracy']
 >>> classmates
 ['Michael', 'Bob', 'Tracy']
@@ -12,7 +12,7 @@
 
 ##### 2.读取指定位置元素
 
-```
+```py
 >>> classmates[0]
 'Michael'
 >>> classmates[1]
@@ -36,7 +36,13 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-##### 3.
+##### 3.修改指定位置的元素
+
+```
+>>> classmates[1] = 'Sarah'
+>>> classmates
+['Michael', 'Sarah', 'Tracy']
+```
 
 
 
