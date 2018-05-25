@@ -50,3 +50,11 @@ else:
 
 for...in循环用于遍历数组中的元素较为方便
 
+```py
+names = ['Michael', 'Bob', 'Tracy']
+for name in names:
+    print(name)
+```
+
+
+
