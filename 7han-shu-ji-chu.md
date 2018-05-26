@@ -280,10 +280,10 @@ name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
 
 如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：
 
-```
+```py
 def person(name, age, *, city, job):
     print(name, age, city, job)
-    
+
 >>> person('Jack', 24, city='Beijing', job='Engineer')
 Jack 24 Beijing Engineer
 ```
