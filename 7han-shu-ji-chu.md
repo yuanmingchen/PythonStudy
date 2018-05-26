@@ -112,3 +112,25 @@ def nop():
 
 pass语句什么都不做，那有什么用？实际上pass可以用来作为占位符，比如现在还没想好怎么写函数的代码，就可以先放一个pass，让代码能运行起来。
 
+`pass`还可以用在其他语句里，比如：
+
+```py
+if age >= 18:
+    pass
+```
+
+##### 4.参数检查
+
+调用函数时，如果参数错误，Python解释器会自动检查出来，并抛出TypeError，这些错误包括参数的类型错误、参数的个数错误。
+
+```py
+>>> my_abs(1, 2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: my_abs() takes 1 positional argument but 2 were given
+```
+
+除此之外，还有一些类型和个数都正确但是却不恰当的参数，需要我们在定义函数的时候认为处理或者抛出错误。
+
+
+
