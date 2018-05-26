@@ -2,6 +2,10 @@
 
 ### 一、python内置函数
 
+python有许多内置函数，具体的使用文档请参考：
+
+[https://yiyibooks.cn/xx/python\_352/library/functions.html](https://yiyibooks.cn/xx/python_352/library/functions.html)
+
 ##### 1.查询函数的帮助信息：
 
 help函数，参数为要查询信息的函数名。
