@@ -144,13 +144,12 @@ def my_abs(x):
 
 添加了参数检查后，如果传入错误的参数类型，函数就可以抛出一个错误：
 
-```js
+```py
 >>> my_abs('A')
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 3, in my_abs
 TypeError: bad operand type
-
 ```
 
 错误和异常处理将在后续讲到。
