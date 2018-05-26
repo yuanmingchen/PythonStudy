@@ -99,7 +99,6 @@ def my_abs(x):
 from abstest import my_abs
 >>> my_abs(-9)
 9
->>>
 ```
 
 
