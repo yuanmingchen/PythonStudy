@@ -121,7 +121,7 @@ if age >= 18:
 
 ##### 4.参数检查
 
-调用函数时，如果参数错误，Python解释器会自动检查出来，并抛出TypeError，这些错误包括参数的类型错误、参数的个数错误。
+调用函数时，如果参数个数错误，Python解释器会自动检查出来，并抛出`TypeError`。
 
 ```py
 >>> my_abs(1, 2)
@@ -130,7 +130,17 @@ Traceback (most recent call last):
 TypeError: my_abs() takes 1 positional argument but 2 were given
 ```
 
-除此之外，还有一些类型和个数都正确但是却不恰当的参数，需要我们在定义函数的时候认为处理或者抛出错误。
+但是如果参数类型错误，Python解释器无法检测出来，需要我们在定义函数的时候人为判断处理或者抛出错误。数据类型检查可以用内置函数`isinstance()`实现：
+
+```py
+def my_abs(x):
+    if not isinstance(x, (int, float)):
+        raise TypeError('bad operand type')
+    if x >= 0:
+        return x
+    else:
+        return -x
+```
 
 
 
