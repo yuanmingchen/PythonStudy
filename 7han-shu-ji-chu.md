@@ -257,6 +257,16 @@ def power(x, n=2):
     return s
 >>> power(5)
 25
+
+
+def enroll(name, gender, age=6, city='Beijing'):
+    print('name:', name)
+    print('gender:', gender)
+    print('age:', age)
+    print('city:', city)
+    
+enroll('Bob', 'M', 7)
+enroll('Adam', 'M', city='Tianjin')
 ```
 
 有多个默认参数时，调用的时候，既可以按顺序提供默认参数，比如调用`enroll('Bob', 'M', 7)`，意思是，除了`name`，`gender`这两个参数外，最后1个参数应用在参数`age`上，`city`参数由于没有提供，仍然使用默认值。
