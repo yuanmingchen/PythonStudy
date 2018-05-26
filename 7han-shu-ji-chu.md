@@ -337,14 +337,32 @@ def calc(numbers):
     for n in numbers:
         sum = sum + n * n
     return sum
-    
+
 >>> calc([1, 2, 3])
 14
 >>> calc((1, 3, 5, 7))
 84
 ```
 
-##### 2.关键字参数
+而我们使用可变参数的话，将会更加简单，不必去定义一个数组作为参数，定义可变参数的方式是在参数的前面加一个\*。
+
+```py
+def calc(*numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+    
+>>> calc(1, 2)
+5
+>>> calc()
+0
+>>> nums = [1, 2, 3]
+>>> calc(*nums)
+14
+```
+
+##### 4.关键字参数
 
 之所以要特别说明位置参数的概念，是因为除了位置参数外，python还有关键字参数，这是java所没有的。
 
@@ -376,7 +394,7 @@ name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
 
 函数`person`除了必选参数`name`和`age`外，还接受关键字参数`kw`。在调用该函数时，可以只传入必选参数，也可以传入任意个数的关键字参数。也可以先组装出一个dict，然后把该dict转换为关键字参数传进去。\*\*extra表示把extra这个dict的所有key-value用关键字参数传入到函数的\*\*kw参数，kw将获得一个dict，注意kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra。
 
-##### 3.命名关键字参数
+##### 5.命名关键字参数
 
 如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：
 
