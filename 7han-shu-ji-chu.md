@@ -152,5 +152,20 @@ Traceback (most recent call last):
 TypeError: bad operand type
 ```
 
-错误和异常处理将在后续讲到。
+##### 5.返回多个值
+
+不同于java函数只可以有一个返回值，python的函数可以有多个返回值。
+
+比如在游戏中经常需要从一个点移动到另一个点，给出坐标、位移和角度，就可以计算出新的新的坐标：
+
+```py
+import math  #导入math包
+
+def move(x, y, step, angle=0):
+    nx = x + step * math.cos(angle)
+    ny = y - step * math.sin(angle)
+    return nx, ny
+```
+
+
 
