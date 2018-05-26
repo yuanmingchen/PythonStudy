@@ -264,11 +264,29 @@ name: Bob age: 35 other: {'city': 'Beijing'}
 >>> person('Adam', 45, gender='M', job='Engineer')
 name: Adam age: 45 other: {'gender': 'M', 'job': 'Engineer'}
 
-#先组装出一个dict，然后，把该dict转换为关键字参数传进去：
+#先组装出一个dict，把该dict转换为关键字参数传进去：
 >>> extra = {'city': 'Beijing', 'job': 'Engineer'}
 >>> person('Jack', 24, city=extra['city'], job=extra['job'])
 name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
+#简单写法：
+>>> extra = {'city': 'Beijing', 'job': 'Engineer'}
+>>> person('Jack', 24, **extra)
+name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
 ```
 
-函数`person`除了必选参数`name`和`age`外，还接受关键字参数`kw`。在调用该函数时，可以只传入必选参数，也可以传入任意个数的关键字参数。也可以先组装出一个dict，然后，把该dict转换为关键字参数传进去：
+函数`person`除了必选参数`name`和`age`外，还接受关键字参数`kw`。在调用该函数时，可以只传入必选参数，也可以传入任意个数的关键字参数。也可以先组装出一个dict，然后把该dict转换为关键字参数传进去。\*\*extra表示把extra这个dict的所有key-value用关键字参数传入到函数的\*\*kw参数，kw将获得一个dict，注意kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra。
+
+##### 3.命名关键字参数
+
+如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：
+
+```
+def person(name, age, *, city, job):
+    print(name, age, city, job)
+    
+>>> person('Jack', 24, city='Beijing', job='Engineer')
+Jack 24 Beijing Engineer
+```
+
+和关键字参数\*\*kw不同，命名关键字参数需要一个特殊分隔符\*，\*后面的参数被视为命名关键字参数。
 
