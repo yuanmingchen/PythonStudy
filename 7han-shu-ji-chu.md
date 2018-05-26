@@ -165,8 +165,8 @@ def move(x, y, step, angle=0):
     nx = x + step * math.cos(angle)
     ny = y - step * math.sin(angle)
     return nx, ny
-    
-    
+
+
 >>> x, y = move(100, 100, 60, math.pi / 6)
 >>> print(x, y)
 151.96152422706632 70.0
@@ -181,4 +181,40 @@ def move(x, y, step, angle=0):
 ```
 
 原来返回值是一个tuple！但是，在语法上，返回一个tuple可以省略括号，而多个变量可以同时接收一个tuple，按位置赋给对应的值，所以，Python的函数返回多值其实就是返回一个tuple，但写起来更方便。
+
+```py
+# -*- coding: utf-8 -*-
+
+import math
+
+def quadratic(a, b, c):
+
+    dd = b*b-4*a*c
+    if dd<0:
+        return
+    elif dd==0:
+        return -b/(2*a)
+    else:
+        return (-b+math.sqrt(dd))/(2*a),(-b-math.sqrt(dd))/(2*a)
+# 测试:
+print('quadratic(2, 3, 1) =', quadratic(2, 3, 1))
+print('quadratic(1, 3, -4) =', quadratic(1, 3, -4))
+
+if quadratic(2, 3, 1) != (-0.5, -1.0):
+    print('测试失败')
+elif quadratic(1, 3, -4) != (1.0, -4.0):
+    print('测试失败')
+else:
+    print('测试成功')
+```
+
+##### 6.小结
+
+* 定义函数时，需要确定函数名和参数个数；
+* 如果有必要，可以先对参数的数据类型做检查；
+* 函数体内部可以用`return`随时返回函数结果；
+* 函数执行完毕也没有`return`语句时，自动`return None`。
+* 函数可以同时返回多个值，但其实就是一个tuple。
+
+
 
