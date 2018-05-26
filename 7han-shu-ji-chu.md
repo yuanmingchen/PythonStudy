@@ -91,7 +91,16 @@ def my_abs(x):
 
 如果没有`return`语句，函数执行完毕后也会返回结果，只是结果为`None`。`return None`可以简写为`return`。
 
-##### 2.
+##### 2.函数的导入和使用
+
+把my\_abs\(\)的函数定义保存为abstest.py文件，那么，可以在该文件的当前目录下启动Python解释器，用from abstest import my\_abs来导入my\_abs\(\)函数，注意abstest是文件名（不含.py扩展名）：
+
+```py
+from abstest import my_abs
+>>> my_abs(-9)
+9
+>>>
+```
 
 
 
