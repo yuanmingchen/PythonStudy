@@ -409,6 +409,8 @@ def person(name, age, *args, city='Brijing', job):
     print(name, age, args, city, job)
 person('yuanmc',18,1,2,3,job = 'SSS')
 person('yuanmc',18,1,2,3,city = 'Shanghai',job = 'SSS')
+yuanmc 18 (1, 2, 3) Beijing SSS
+yuanmc 18 (1, 2, 3) Shanghai SSS
 ```
 
 和关键字参数\*\*kw不同，命名关键字参数需要一个特殊分隔符\*，\*后面的参数被视为命名关键字参数。如果函数定义中已经有了一个**可变参数**，后面跟着的命名关键字参数就不再需要一个特殊分隔符`*`了。
