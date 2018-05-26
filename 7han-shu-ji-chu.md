@@ -244,3 +244,26 @@ def power(x, n):
 
 java中的函数参数都是位置参数。
 
+##### 2.关键字参数
+
+之所以要特别说明位置参数的概念，是因为除了位置参数外，python还有关键字参数，这是java所没有的。
+
+关键字参数允许你传入0个或任意个**含参数名的参数**，这些关键字参数在函数内部自动组装为一个**dict**。请看示例：
+
+```py
+def person(name, age, **kw):
+    print('name:', name, 'age:', age, 'other:', kw)
+
+#只传入必须参数：
+>>> person('Michael', 30)
+name: Michael age: 30 other: {}
+
+#传入必须参数和任意个关键字参数：
+>>> person('Bob', 35, city='Beijing')
+name: Bob age: 35 other: {'city': 'Beijing'}
+>>> person('Adam', 45, gender='M', job='Engineer')
+name: Adam age: 45 other: {'gender': 'M', 'job': 'Engineer'}
+```
+
+函数`person`除了必选参数`name`和`age`外，还接受关键字参数`kw`。在调用该函数时，可以只传入必选参数，也可以传入任意个数的关键字参数。
+
