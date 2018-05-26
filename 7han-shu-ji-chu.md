@@ -404,16 +404,14 @@ def person(name, age, *, city, job):
 
 >>> person('Jack', 24, city='Beijing', job='Engineer')
 Jack 24 Beijing Engineer
->>> person('Jack', 24, city='Beijing')
-Jack 24 Beijing
-
-
 
 def person(name, age, *args, city, job):
     print(name, age, args, city, job)
 ```
 
 和关键字参数\*\*kw不同，命名关键字参数需要一个特殊分隔符\*，\*后面的参数被视为命名关键字参数。如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符`*`了。
+
+命名关键字参数若没有指定默认值，则是必须参数，必须传值！！！
 
 命名关键字参数**必须传入参数名**，这和位置参数不同。如果没有传入参数名，调用将报错。调用时缺少参数名city和job，Python解释器把这4个参数均视为位置参数，但person\(\)函数仅接受2个位置参数。
 
