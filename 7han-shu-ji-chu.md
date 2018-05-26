@@ -12,8 +12,20 @@ help(abs)
 Help on built-in function abs in module builtins: 
 
 abs(x, /) 
-    Return the absolute value of the argument. 
+    Return the absolute value of the argument.
+```
 
+##### 2.调用内置函数
+
+例如abs函数，绝对值函数。
+
+```py
+>>> abs(100)
+100
+>>> abs(-20)
+20
+>>> abs(12.34)
+12.34
 ```
 
 
