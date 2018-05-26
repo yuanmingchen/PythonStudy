@@ -405,8 +405,9 @@ def person(name, age, *, city, job):
 >>> person('Jack', 24, city='Beijing', job='Engineer')
 Jack 24 Beijing Engineer
 
-def person(name, age, *args, city, job):
+def person(name, age, *args, city='Brijing', job):
     print(name, age, args, city, job)
+person('yuanmc',18,1,2,3,job = 'SSS')
 person('yuanmc',18,1,2,3,city = 'Shanghai',job = 'SSS')
 ```
 
