@@ -264,7 +264,7 @@ def enroll(name, gender, age=6, city='Beijing'):
     print('gender:', gender)
     print('age:', age)
     print('city:', city)
-    
+
 enroll('Sarah', 'F')
 enroll('Bob', 'M', 7)
 enroll('Adam', 'M', city='Tianjin')
@@ -281,6 +281,23 @@ enroll('Adam', 'M', city='Tianjin')
 * 当函数有多个参数时，把**变化大的参数放前面，变化小的参数放后面**。变化小的参数就可以作为默认参数。
 
 这么做是为了降低调用函数的难度。
+
+* **默认函数的坑：**
+
+```py
+def add_end(L=[]):
+    L.append('END')
+    return L
+#第一次调用：
+>>> add_end() #ok，没有问题
+['END']
+#第二次调用：
+>>> add_end()
+['END', 'END']
+#第三次调用：
+>>> add_end()
+['END', 'END', 'END']
+```
 
 ##### 2.关键字参数
 
