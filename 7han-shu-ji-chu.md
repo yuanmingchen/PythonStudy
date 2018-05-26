@@ -263,6 +263,11 @@ name: Michael age: 30 other: {}
 name: Bob age: 35 other: {'city': 'Beijing'}
 >>> person('Adam', 45, gender='M', job='Engineer')
 name: Adam age: 45 other: {'gender': 'M', 'job': 'Engineer'}
+
+#先组装出一个dict，然后，把该dict转换为关键字参数传进去：
+>>> extra = {'city': 'Beijing', 'job': 'Engineer'}
+>>> person('Jack', 24, city=extra['city'], job=extra['job'])
+name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
 ```
 
 函数`person`除了必选参数`name`和`age`外，还接受关键字参数`kw`。在调用该函数时，可以只传入必选参数，也可以传入任意个数的关键字参数。也可以先组装出一个dict，然后，把该dict转换为关键字参数传进去：
