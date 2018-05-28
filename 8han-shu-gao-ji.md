@@ -127,7 +127,7 @@ C
 
 for ... in还可以迭代dict字典，或者只是迭代字典的key值和value值。
 
-**默认情况**下，dict迭代的是**key**。如果要迭代value，可以用**`for value in d.values()`**，如果要同时迭代key和value，可以用**`for k, v in d.items()`**。
+**默认情况**下，dict迭代的是**key**。如果要迭代value，可以用`for value in d.values()`，如果要同时迭代key和value，可以用`for k, v in d.items()`。
 
 ```py
 >>> d = {'a': 1, 'b': 2, 'c': 3}  #默认情况下，dict迭代的是key
@@ -139,6 +139,19 @@ for value in d.values():
     print(value)
 for k, v in d.items():
     print(k,v)
+```
+
+##### 5.`enumerate`函数
+
+如果要对list实现类似Java那样的下标循环怎么办？Python内置的`enumerate`函数可以把一个list变成索引-元素对，这样就可以在`for`循环中同时迭代索引和元素本身：
+
+```py
+>>> for i, value in enumerate(['A', 'B', 'C']):
+...     print(i, value)
+...
+0 A
+1 B
+2 C
 ```
 
 
