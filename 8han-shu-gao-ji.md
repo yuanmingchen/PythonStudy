@@ -167,5 +167,19 @@ enumerate函数返回的是enumerate类型的对象，而不是dict类型。
 3 9
 ```
 
+##### 7.能否迭代的判断
+
+上面列举了那么多可以迭代的对象，那么到底什么样的对象才可以迭代呢？如何判断呢？这就需要使用collections模块的Iterable类型判断。
+
+```py
+>>> from collections import Iterable
+>>> isinstance('abc', Iterable) # str是否可迭代
+True
+>>> isinstance([1,2,3], Iterable) # list是否可迭代
+True
+>>> isinstance(123, Iterable) # 整数是否可迭代
+False
+```
+
 
 
