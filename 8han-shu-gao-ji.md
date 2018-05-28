@@ -154,5 +154,11 @@ for k, v in d.items():
 2 C
 ```
 
+enumerate函数返回的是enumerate类型的对象，而不是dict类型。
+
+##### 6.其他迭代
+
+
+
 
 
