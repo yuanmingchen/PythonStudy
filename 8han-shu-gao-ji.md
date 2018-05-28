@@ -421,7 +421,7 @@ StopIteration
 * 要理解generator的工作原理，它是在`for`循环的过程中不断计算出下一个元素，并在适当的条件结束`for`循环。对于函数改成的generator来说，遇到`return`语句或者执行到函数体最后一行语句，就是结束generator的指令，`for`循环随之结束。
 * 请注意区分普通函数和generator函数
 
-```
+```py
 >>> r = abs(6)
 >>> r
 6
