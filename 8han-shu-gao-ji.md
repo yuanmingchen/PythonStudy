@@ -92,5 +92,21 @@ def trim(s):
         return s[qian:hou+1]
 ```
 
+### 二、迭代
+
+##### 1.迭代的概念
+
+如果给定一个list或tuple，我们可以通过`for`循环来遍历这个list或tuple，这种遍历我们称为迭代（Iteration）。在Python中，迭代是通过`for ... in`来完成的。
+
+Python的`for`循环不仅可以用在list或tuple上，还可以作用在其他可迭代对象上。只要是可迭代对象，无论有无下标，都可以迭代。
+
+##### 2.数组的迭代
+
+```
+for x in list(range(101)):
+    sum = sum + x
+print(sum)
+```
+
 
 

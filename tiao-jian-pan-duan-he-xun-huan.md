@@ -112,36 +112,36 @@ while n < 10:
 ```py
 # -*- coding: utf-8 -*-
 sum = 0
-for x in range(101):	
-	sum = sum + x
+for x in range(101):    
+    sum = sum + x
 print("for计算的0-100之和是："+str(sum))
 
 sum = 0
 i = 0
 ls = [1,2,3,5,8,9,11,25,36,78,125,652]
 while i<len(ls):
-	sum = sum + ls[i]
-	i = i+1
-	
+    sum = sum + ls[i]
+    i = i+1
+
 print("while计算的数组之和是："+str(sum))
 
 sum = 0
 i = 0
 while i<len(ls):
-	if ls[i]>10:
-		break
-	sum = sum + ls[i]
-	i = i+1
+    if ls[i]>10:
+        break
+    sum = sum + ls[i]
+    i = i+1
 print("while+break计算的数组小于10的元素之和是："+str(sum))
 
 sum = 0
 i = 0
 while i<len(ls):
-	if ls[i]<10:
-		i = i + 1
-		continue
-	sum = sum + ls[i]
-	i = i+1
+    if ls[i]<10:
+        i = i + 1
+        continue
+    sum = sum + ls[i]
+    i = i+1
 print("while+continue计算的数组大于10的元素之和是："+str(sum))
 ```
 
