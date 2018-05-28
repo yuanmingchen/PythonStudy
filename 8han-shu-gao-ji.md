@@ -102,10 +102,43 @@ Python的`for`循环不仅可以用在list或tuple上，还可以作用在其他
 
 ##### 2.数组的迭代
 
+`for ... in可以迭代数组list和tuple，这是我们早就知道的。`
+
 ```py
-for x in list(range(101)):
+for x in list(range(101)):   #此处不强转为list也可以
     sum = sum + x
 print(sum)
+```
+
+##### 3.字符串的迭代
+
+for ... in还可以迭代字符串，与数组的迭代方式是一样的。
+
+```py
+>>> for ch in 'ABC':
+...     print(ch)
+...
+A
+B
+C
+```
+
+##### 4.dict的迭代
+
+for ... in还可以迭代dict字典，或者只是迭代字典的key值和value值。
+
+**默认情况**下，dict迭代的是**key**。如果要迭代value，可以用**`for value in d.values()`**，如果要同时迭代key和value，可以用**`for k, v in d.items()`**。
+
+```py
+>>> d = {'a': 1, 'b': 2, 'c': 3}  #默认情况下，dict迭代的是key
+>>> for key in d:
+...     print(key)
+...
+
+for value in d.values():
+    print(value)
+for k, v in d.items():
+    print(k,v)
 ```
 
 
