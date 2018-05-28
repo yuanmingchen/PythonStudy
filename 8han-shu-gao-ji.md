@@ -415,6 +415,22 @@ StopIteration
 
 可以看到，odd不是普通函数，而是generator，在执行过程中，遇到yield就中断，下次又继续执行。执行3次yield后，已经没有yield可以执行了，所以，第4次调用next\(o\)就报错。
 
+##### 3.小结
+
+* generator是非常强大的工具，在Python中，可以简单地把列表生成式改成generator，也可以通过函数实现复杂逻辑的generator。
+* 要理解generator的工作原理，它是在`for`循环的过程中不断计算出下一个元素，并在适当的条件结束`for`循环。对于函数改成的generator来说，遇到`return`语句或者执行到函数体最后一行语句，就是结束generator的指令，`for`循环随之结束。
+* 请注意区分普通函数和generator函数
+
+```
+>>> r = abs(6)
+>>> r
+6
+
+>>> g = fib(6)
+>>> g
+<generator object fib at 0x1022ef948>
+```
+
 ### 五、迭代器
 
 可以直接作用于`for`循环的数据类型有以下几种：
@@ -466,9 +482,7 @@ True
 
 `Iterator`甚至可以表示一个无限大的数据流，例如全体自然数。而使用list是永远不可能存储全体自然数的。
 
-5.小结
-
-### 小结
+##### 5.小结
 
 * 凡是可作用于`for`循环的对象都是`Iterable`类型；
 * 凡是可作用于`next()`函数的对象都是`Iterator`类型，它们表示一个惰性计算的序列；
@@ -479,7 +493,7 @@ True
 ```py
 for x in [1, 2, 3, 4, 5]:
     pass
-    
+
 #上述代码完全等价于：
 #首先获得Iterator对象:
 it = iter([1, 2, 3, 4, 5])
@@ -492,8 +506,6 @@ while True:
         # 遇到StopIteration就退出循环
         break
 ```
-
-
 
 
 
