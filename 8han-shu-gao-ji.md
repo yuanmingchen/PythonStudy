@@ -102,7 +102,7 @@ Python的`for`循环不仅可以用在list或tuple上，还可以作用在其他
 
 ##### 2.数组的迭代
 
-```
+```py
 for x in list(range(101)):
     sum = sum + x
 print(sum)
