@@ -304,7 +304,60 @@ generator保存的是算法，每次调用`next(g)`，就计算出`g`的下一�
 
 ###### （2）第二种方法
 
+首先来看一个打印斐波那契数列的函数。
 
+```py
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        print(b)
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
+```
+
+值得一提的是，上面的赋值语句：
+
+```py
+a, b = b, a + b
+```
+
+相当于：
+
+```py
+t = (b, a + b) # t是一个tuple
+a = t[0]
+b = t[1]
+```
+
+上面的函数和generator仅一步之遥。要把`fib`函数变成generator，只需要把`print(b)`改为`yield b`就可以了：
+
+```py
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield b
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
+    
+>>> f = fib(6)
+>>> f
+<generator object fib at 0x104feaaa0>
+
+
+>>> for n in fib(6):  #如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator。
+...     print(n)
+...
+1
+1
+2
+3
+5
+8
+```
+
+这就是定义generator的另一种方法。如果一个函数定义中包含`yield`关键字，那么这个函数就不再是一个普通函数，而是一个generator。
 
 
 
