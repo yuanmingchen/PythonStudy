@@ -7,4 +7,16 @@ python学习菜鸡笔记。
 
 
 python中文文档：[https://yiyibooks.cn/xx/python\_352/index.html](https://yiyibooks.cn/xx/python_352/index.html)
+{
+    "plugins": [
+        "include-codeblock"
+    ],
+    "pluginsConfig": {
+        "include-codeblock": {
+            "template": "ace",
+            "unindent": "true",
+            "theme": "monokai"
+        }
+    }
+}
 
