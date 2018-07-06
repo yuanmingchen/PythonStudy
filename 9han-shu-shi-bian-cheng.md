@@ -63,6 +63,7 @@ reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
 ```
 
 ```py
+#int转字符串的实现，即str()方法
 >>> from functools import reduce
 >>> def fn(x, y):
 ...     return x * 10 + y
