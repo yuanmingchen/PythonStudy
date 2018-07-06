@@ -63,7 +63,7 @@ reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
 ```
 
 ```py
-#int转字符串的实现，即str()方法
+#字符串转int的实现，即int()方法
 >>> from functools import reduce
 >>> def fn(x, y):
 ...     return x * 10 + y
@@ -74,7 +74,22 @@ reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
 ...
 >>> reduce(fn, map(char2num, '13579'))
 13579
+
+
+#上面的的程序归纳为一个函数str2int
+from functools import reduce
+
+DIGITS = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+
+def str2int(s):
+    def fn(x, y):
+        return x * 10 + y
+    def char2num(s):
+        return DIGITS[s]
+    return reduce(fn, map(char2num, s))
 ```
+
+### 3.
 
 
 
