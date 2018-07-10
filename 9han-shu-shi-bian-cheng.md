@@ -135,7 +135,7 @@ list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
 用Python来实现这个算法，可以先构造一个从`3`开始的奇数序列：
 
 ```py
-#用filter求素数，构造一个从3开始的奇数序列
+#用filter求素数，首先构造一个从3开始的奇数序列
 def _odd_iter():
     n = 1
     while True:
