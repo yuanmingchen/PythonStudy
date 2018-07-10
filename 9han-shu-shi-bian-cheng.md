@@ -111,7 +111,7 @@ list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
 ```
 
 ```py
-#用filter求素数
+#用filter求素数，下列构造一个无限序列，用于产生所有奇数，代表第一轮过滤之后的序列
 def _odd_iter():
     n = 1
     while True:
