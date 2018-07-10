@@ -199,7 +199,12 @@ sorted（数组，key=函数名，reverse=True）
 ['Credit', 'Zoo', 'about', 'bob']
 
 #想忽略大小写按照从A-Z排序
+>>> sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower)
+['about', 'bob', 'Credit', 'Zoo']
 
+#想忽略大小写按照从Z-A排序
+>>> sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
+['Zoo', 'Credit', 'bob', 'about']
 ```
 
 
