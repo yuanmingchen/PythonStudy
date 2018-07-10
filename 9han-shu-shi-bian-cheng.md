@@ -276,7 +276,8 @@ False
 
 ##### （2）举例
 
-```
+```py
+#函数返回一个函数数组
 def count():
     fs = []
     for i in range(1, 4):
