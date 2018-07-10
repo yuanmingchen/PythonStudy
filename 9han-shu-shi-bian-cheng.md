@@ -211,7 +211,19 @@ sorted（数组，key=函数名，reverse=True）
 
 ### 1.介绍
 
+高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。
 
+### 2.举例
+
+首先看普通的求和函数：
+
+```py
+def calc_sum(*args):
+    ax = 0
+    for n in args:
+        ax = ax + n
+    return ax
+```
 
 
 
