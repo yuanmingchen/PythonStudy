@@ -89,9 +89,7 @@ def str2int(s):
     return reduce(fn, map(char2num, s))
 ```
 
-### 3.filter
-
-
+### 3.filter函数
 
 
 
