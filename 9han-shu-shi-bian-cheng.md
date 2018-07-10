@@ -228,7 +228,32 @@ def calc_sum(*args):
 但是，如果不需要立刻求和，而是在后面的代码中，根据需要再计算怎么办？可以不返回求和的结果，而是返回求和的函数：
 
 ```
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for n in args:
+            ax = ax + n
+        return ax
+    return sum
+```
 
+当我们调用`lazy_sum()`时，返回的并不是求和结果，而是求和函数：
+
+```
+>>> f = lazy_sum(1, 3, 5, 7, 9)
+>>> f
+<function lazy_sum.<locals>.sum at 0x101c6ed90>
+```
+
+调用函数`f`时，才真正计算求和的结果：
+
+```
+>
+>
+>
+f()
+
+25
 ```
 
 
