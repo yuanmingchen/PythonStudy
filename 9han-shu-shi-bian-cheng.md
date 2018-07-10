@@ -372,7 +372,7 @@ else:
 
 通过对比可以看出，匿名函数`lambda x: x * x`实际上就是：
 
-```
+```py
 def f(x):
     return x * x
 ```
