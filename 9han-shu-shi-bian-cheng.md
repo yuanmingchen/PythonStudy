@@ -117,10 +117,10 @@ def _odd_iter():
     while True:
         n = n + 2
         yield n
-        
+
 def _not_divisible(n):
     return lambda x: x % n > 0
-   
+
 #这个生成器先返回第一个素数2，然后，利用filter()不断产生筛选后的新的序列。 
 def primes():
     yield 2
@@ -129,8 +129,14 @@ def primes():
         n = next(it) # 返回序列的第一个数
         yield n
         it = filter(_not_divisible(n), it) # 构造新序列
-        
-        
+
+#使用方法：由于primes()也是一个无限序列，所以调用时需要设置一个退出循环的条件：
+# 打印1000以内的素数:
+for n in primes():
+    if n < 1000:
+        print(n)
+    else:
+        break
 ```
 
 
