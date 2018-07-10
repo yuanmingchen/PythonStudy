@@ -316,7 +316,7 @@ def count():
         return g
     fs = []
     for i in range(1, 4):
-        fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
+        fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()，g中持有j是f（j）被调用时的j
     return fs
 ```
 
