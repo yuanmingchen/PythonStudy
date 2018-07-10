@@ -197,6 +197,9 @@ sorted（数组，key=函数名，reverse=True）
 #字符串排序，按照ASCII码大小排序
 >>> sorted(['bob', 'about', 'Zoo', 'Credit'])
 ['Credit', 'Zoo', 'about', 'bob']
+
+#想忽略大小写按照从A-Z排序
+
 ```
 
 
