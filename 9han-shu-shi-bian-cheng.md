@@ -194,7 +194,9 @@ sorted（数组，key=函数名，reverse=True）
 >>> sorted([36, 5, -12, 9, -21], key=abs)
 [5, 9, -12, -21, 36]
 
-
+#字符串排序，按照ASCII码大小排序
+>>> sorted(['bob', 'about', 'Zoo', 'Credit'])
+['Credit', 'Zoo', 'about', 'bob']
 ```
 
 
