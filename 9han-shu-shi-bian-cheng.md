@@ -163,5 +163,11 @@ for n in primes():
         break
 ```
 
+### 4.sorted函数
+
+##### （1）作用
+
+
+
 
 
