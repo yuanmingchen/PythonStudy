@@ -339,15 +339,15 @@ def count():
 ```py
 # -*- coding:utf-8 -*-
 def ziranshu():
-	n = 0
-	while True:
-		n = n+ 1
-		yield n
+    n = 0
+    while True:
+        n = n+ 1
+        yield n
 def counter():
-	it = ziranshu()
-	def f():
-		return next(it)
-	return f
+    it = ziranshu()
+    def f():
+        return next(it)
+    return f
 i = 0
 
 counterA = counter()
@@ -358,6 +358,10 @@ if [counterB(), counterB(), counterB(), counterB()] == [1, 2, 3, 4]:
 else:
     print('测试失败!')
 ```
+
+## 三、匿名函数
+
+### 1.
 
 
 
