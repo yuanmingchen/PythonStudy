@@ -89,7 +89,9 @@ def str2int(s):
     return reduce(fn, map(char2num, s))
 ```
 
-### 3.
+### 3.filter
+
+
 
 
 
