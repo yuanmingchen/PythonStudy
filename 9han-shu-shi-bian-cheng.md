@@ -402,5 +402,9 @@ def build(x, y):
     return lambda: x * x + y * y
 ```
 
+## 四、装饰器
+
+
+
 
 
