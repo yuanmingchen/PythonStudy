@@ -442,7 +442,7 @@ def log(func):
 @log
 def now():
     print('2015-3-25')
-    
+
 #调用now()函数，不仅会运行now()函数本身，还会在运行now()函数前打印一行日志：
 >>> now()
 call now():
@@ -471,6 +471,28 @@ def log(text):
             return func(*args, **kw)
         return wrapper
     return decorator
+```
+
+这个3层嵌套的decorator用法如下：
+
+```py
+@log('execute')
+def now():
+    print('2015-3-25')
+```
+
+执行结果如下：
+
+```
+>>> now()
+execute now():
+2015-3-25
+```
+
+和两层嵌套的decorator相比，3层嵌套的效果是这样的：
+
+```py
+>>>now = log('execute')(now)
 ```
 
 
