@@ -483,7 +483,7 @@ def now():
 
 执行结果如下：
 
-```
+```py
 >>> now()
 execute now():
 2015-3-25
@@ -494,6 +494,21 @@ execute now():
 ```py
 >>>now = log('execute')(now)
 ```
+
+我们来剖析上面的语句，首先执行`log('execute')`，返回的是`decorator`函数，再调用返回的函数，参数是`now`函数，返回值最终是`wrapper`函数。
+
+### 4.函数属性变更问题
+
+以上两种decorator的定义都没有问题，但还差最后一步。因为我们讲了函数也是对象，它有`__name__`等属性，但你去看经过decorator装饰之后的函数，它们的`__name__`已经从原来的`'now'`变成了`'wrapper'`：
+
+```py
+>>> now.__name__
+'wrapper'
+```
+
+因为返回的那个`wrapper()`函数名字就是`'wrapper'`，所以，需要把原始函数的`__name__`等属性复制到`wrapper()`函数中，否则，有些依赖函数签名的代码执行就会出错。
+
+不需要编写`wrapper.__name__ = func.__name__`这样的代码，Python内置的`functools.wraps`就是干这个事的，所以，一个完整的decorator的写法如下：
 
 
 
