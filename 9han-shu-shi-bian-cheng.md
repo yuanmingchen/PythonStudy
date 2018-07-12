@@ -608,6 +608,14 @@ int2 = functools.partial(int, base=2)
 
 ```py
 int2('10010')
+
+#上面的代码相当于
+kw = { 'base': 2 }
+int('10010', **kw)
+
+#当传入：
+
+max2 = functools.partial(max, 10)
 ```
 
 
