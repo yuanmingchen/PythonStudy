@@ -536,5 +536,5 @@ def log(text):
     return decorator
 ```
 
-
+`import functools`是导入`functools`模块。模块的概念稍候讲解。现在，只需记住在定义`wrapper()`的前面加上`@functools.wraps(func)`即可。
 
