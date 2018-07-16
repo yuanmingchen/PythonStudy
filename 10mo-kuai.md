@@ -59,3 +59,5 @@ import sys
 
 运行`python3 hello.py Michael`获得的`sys.argv`就是`['hello.py', 'Michael]`。
 
+
+
