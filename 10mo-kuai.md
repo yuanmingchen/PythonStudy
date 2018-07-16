@@ -66,7 +66,27 @@ if __name__=='__main__':
     test()
 ```
 
-当我们**在命令行运行`hello`模块文件**时，Python解释器把一个特殊变量`__name__`置为`__main__`，而如果在其他地方导入该`hello`模块时，`if`判断将失败，因此，这种`if`测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是**运行测试**。
+当我们**在命令行运行**`hello`**模块文件**时，Python解释器把一个特殊变量`__name__`置为`__main__`，而如果在其他地方导入该`hello`模块时，`if`判断将失败，因此，这种`if`测试可以让一个模块通过命令行运行时执行一些额外的代码，最常见的就是**运行测试**。
+
+我们可以用命令行运行`hello.py`看看效果：
+
+```py
+$ python3 hello.py
+Hello, world!
+$ python hello.py Michael
+Hello, Michael!
+```
+
+如果启动Python交互环境，再导入`hello`模块：
+
+```py
+$ python3
+Python 3.4.3 (v3.4.3:9b73f1c3e601, Feb 23 2015, 02:52:03) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import hello
+>>>
+```
 
 
 
