@@ -59,5 +59,12 @@ import sys
 
 运行`python3 hello.py Michael`获得的`sys.argv`就是`['hello.py', 'Michael]`。
 
+最后，注意到这两行代码：
+
+```py
+if __name__=='__main__':
+    test()
+```
+
 
 
