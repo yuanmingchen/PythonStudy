@@ -181,5 +181,16 @@ pip install Pillow
 └────────────────────────────────────────────────────────┘
 ```
 
+### 4.模块搜索路径
 
+当我们试图加载一个模块时，Python会在指定的路径下搜索对应的.py文件，如果找不到，就会报错：
+
+```py
+>>> import mymodule
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named mymodule
+```
+
+默认情况下，Python解释器会搜索当前目录、所有已安装的内置模块和第三方模块，搜索路径存放在`sys`模块的`path`变量中：
 
