@@ -4,6 +4,8 @@
 
 ### 1.介绍
 
+模块类似于Java中的包，一个模块含有很多
+
 Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。
 
 ### 2.举例
@@ -53,5 +55,7 @@ import sys
 
 `sys`模块有一个`argv`变量，用list存储了命令行的所有参数。`argv`至少有一个元素，因为第一个参数永远是该.py文件的名称，例如：
 
+运行`python3 hello.py`获得的`sys.argv`就是`['hello.py']`；
 
+运行`python3 hello.py Michael`获得的`sys.argv`就是`['hello.py', 'Michael]`。
 
