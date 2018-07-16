@@ -88,5 +88,18 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
+导入时，没有打印`Hello, word!`，因为没有执行`test()`函数。
+
+调用`hello.test()`时，才能打印出`Hello, word!`：
+
+```py
+>>>hello.test()
+Hello, world!
+```
+
+### 3.作用域
+
+
+
 
 
