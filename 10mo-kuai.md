@@ -99,7 +99,63 @@ Hello, world!
 
 ### 3.作用域
 
+在一个模块中，我们可能会定义很多函数和变量，但有的函数和变量我们希望给别人使用，有的函数和变量我们希望仅仅在模块内部使用。在Python中，是通过`_`前缀来实现的。
 
+正常的函数和变量名是公开的（public），可以被直接引用，比如：`abc`，`x123`，`PI`等；
+
+类似`__xxx__`这样的变量是特殊变量，可以被直接引用，但是有特殊用途，比如上面的`__author__`，`__name__`就是特殊变量，`hello`模块定义的文档注释也可以用特殊变量`__doc__`访问，我们自己的变量一般不要用这种变量名；
+
+类似`_xxx`和`__xxx`这样的函数或变量就是非公开的（private），不应该被直接引用，比如`_abc`，`__abc`等；
+
+之所以我们说，private函数和变量“不应该”被直接引用，而不是“不能”被直接引用，是**因为Python并没有一种方法可以完全限制访问private函数或变量**，但是，从编程习惯上不应该引用private函数或变量。
+
+private函数或变量不应该被别人引用，那它们有什么用呢？请看例子：
+
+```py
+def _private_1(name):
+    return 'Hello, %s' % name
+
+def _private_2(name):
+    return 'Hi, %s' % name
+
+def greeting(name):
+    if len(name) > 3:
+        return _private_1(name)
+    else:
+        return _private_2(name)
+```
+
+我们在模块里公开`greeting()`函数，而把内部逻辑用private函数隐藏起来了，这样，调用`greeting()`函数不用关心内部的private函数细节，这也是一种非常有用的代码封装和抽象的方法，即：
+
+**外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public。**
+
+## 二、安装第三方模块
+
+### 1.pip工具的安装
+
+在Python中，安装第三方模块，是通过包管理工具pip完成的。
+
+如果你正在使用Mac或Linux，安装pip本身这个步骤就可以跳过了。
+
+如果你正在使用Windows，请参考[安装Python](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014316090478912dab2a3a9e8f4ed49d28854b292f85bb000)一节的内容，确保安装时勾选了`pip`和`Add python.exe to Path`。
+
+在命令提示符窗口下尝试运行`pip`，如果Windows提示未找到命令，可以重新运行安装程序添加`pip`。
+
+注意：Mac或Linux上有可能并存Python 3.x和Python 2.x，因此对应的pip命令是`pip3`。
+
+### 2.举例
+
+例如，我们要安装一个第三方库——Python Imaging Library，这是Python下非常强大的处理图像的工具库。不过，PIL目前只支持到Python 2.7，并且有年头没有更新了，因此，基于PIL的Pillow项目开发非常活跃，并且支持最新的Python 3。
+
+一般来说，第三方库都会在Python官方的[pypi.python.org](https://pypi.python.org/)网站注册，要安装一个第三方库，必须先知道该库的名称，可以在官网或者pypi上搜索，比如Pillow的名称叫[Pillow](https://pypi.python.org/pypi/Pillow/)，因此，安装Pillow的命令就是：
+
+```py
+pip install Pillow
+```
+
+耐心等待下载并安装后，就可以使用Pillow了。
+
+### 3.安装常用模块
 
 
 
