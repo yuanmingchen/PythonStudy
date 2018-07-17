@@ -314,14 +314,21 @@ class Student(object):
 'Bart Simpson'
 ```
 
-但是强烈建议你不要这么干，因为不同版本的Python解释器可能会把`__name`改成不同的变量名。
+**但是强烈建议你不要这么干，因为不同版本的Python解释器可能会把`__name`改成不同的变量名。**
 
 总的来说就是，Python本身没有任何机制阻止你干坏事，一切全靠自觉。
 
+### 5.常见错误
+
 最后注意下面的这种_错误写法_：
 
-```
-
+```py
+>>> bart = Student('Bart Simpson', 59)
+>>> bart.get_name()
+'Bart Simpson'
+>>> bart.__name = 'New Name' # 设置__name变量！
+>>> bart.__name
+'New Name'
 ```
 
 表面上看，外部代码“成功”地设置了`__name`变量，但实际上这个`__name`变量和class内部的`__name`变量_不是_一个变量！内部的`__name`变量已经被Python解释器自动改成了`_Student__name`，而外部代码给`bart`新增了一个`__name`变量。不信试试：
@@ -331,6 +338,42 @@ class Student(object):
 # get_name()内部返回self.__name
 'Bart Simpson'
 ```
+
+### 三、继承和多态
+
+### 1.继承
+
+##### （1）概念
+
+在OOP程序设计中，当我们定义一个class的时候，可以从某个现有的class继承，新的class称为子类（Subclass），而被继承的class称为基类、父类或超类（Base class、Super class）。
+
+##### （2）举例
+
+比如，我们已经编写了一个名为`Animal`的class，有一个`run()`方法可以直接打印：
+
+```py
+class Animal(object):
+    def run(self):
+        print('Animal is running...')
+```
+
+当我们需要编写`Dog`和`Cat`类时，就可以直接从`Animal`类继承：
+
+```py
+class Dog(Animal):
+    pass
+
+class Cat(Animal):
+    pass
+```
+
+对于`Dog`来说，`Animal`就是它的父类，对于`Animal`来说，`Dog`就是它的子类。`Cat`和`Dog`类似。
+
+对于Dog来说，Animal就是它的父类，对于Animal来说，Dog就是它的子类。Cat和Dog类似。
+
+##### （3）继承的好处
+
+
 
 
 
