@@ -25,7 +25,6 @@ mycompany
 ├─ __init__.py
 ├─ abc.py
 └─ xyz.py
-
 ```
 
 引入了包以后，只要顶层的包名不与别人冲突，那所有模块都不会与别人冲突。现在，`abc.py`模块的名字就变成了`mycompany.abc`，类似的，`xyz.py`的模块名变成了`mycompany.xyz`。
@@ -43,7 +42,6 @@ mycompany
  ├─ __init__.py
  ├─ abc.py
  └─ xyz.py
-
 ```
 
 文件`www.py`的模块名就是`mycompany.web.www`，两个文件`utils.py`的模块名分别是`mycompany.utils`和`mycompany.web.utils`。
@@ -52,7 +50,7 @@ mycompany
 
 ### 1.介绍
 
-模块类似于Java中的包中的类，一个模块含有很多功能（方法、字段等），导入模块后，就可以调用该模块包含的所有功能（方法、字段等）。导入模块与Java导入包相似，都是使用import关键字。
+模块类似于Java中的包中的一个文件，一个模块含有很多功能（方法、字段等），导入模块后，就可以调用该模块包含的所有功能（方法、字段等）。导入模块与Java导入包相似，都是使用import关键字。
 
 Python本身就内置了很多非常有用的模块，只要安装完毕，这些模块就可以立刻使用。
 
