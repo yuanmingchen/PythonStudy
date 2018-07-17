@@ -15,7 +15,8 @@ python中文文档：[https://yiyibooks.cn/xx/python\_352/index.html](https://yi
 |                   |————输出
 |
 |
-|————2.变量
+|              |————数据格式（）
+|————2.变量———— |
 |
 |
 |————3.字符串编码
@@ -47,6 +48,8 @@ python中文文档：[https://yiyibooks.cn/xx/python\_352/index.html](https://yi
 |————11.面向对象编程
 |
 ```
+
+![](/assets/未命名文件%286%29.png)
 
 
 
