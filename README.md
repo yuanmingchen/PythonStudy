@@ -9,6 +9,16 @@ python中文文档：[https://yiyibooks.cn/xx/python\_352/index.html](https://yi
 各章内容概括：
 
 ```
-
+|____1.输入和输出
+|
+|
+|——————
+|
+|
+|
+|
+|
 ```
+
+
 
