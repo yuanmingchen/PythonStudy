@@ -314,7 +314,7 @@ class Student(object):
 'Bart Simpson'
 ```
 
-**但是强烈建议你不要这么干，因为不同版本的Python解释器可能会把`__name`改成不同的变量名。**
+**但是强烈建议你不要这么干，因为不同版本的Python解释器可能会把**`__name`**改成不同的变量名。**
 
 总的来说就是，Python本身没有任何机制阻止你干坏事，一切全靠自觉。
 
@@ -373,7 +373,19 @@ class Cat(Animal):
 
 ##### （3）继承的好处
 
+最大的好处是子类获得了父类的全部功能。由于Animial实现了run\(\)方法，因此，Dog和Cat作为它的子类，什么事也没干，就自动拥有了run\(\)方法：
 
+```py
+dog = Dog()
+dog.run()
+
+cat = Cat()
+cat.run()
+
+#运行结果如下：
+Animal is running...
+Animal is running...
+```
 
 
 
