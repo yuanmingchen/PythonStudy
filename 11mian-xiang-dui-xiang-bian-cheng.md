@@ -247,7 +247,6 @@ class Student(object):
 
     def print_score(self):
         print('%s: %s' % (self.__name, self.__score))
-
 ```
 
 改完后，对于外部代码来说，没什么变动，但是已经无法从外部访问`实例变量.__name`和`实例变量.__score`了：
@@ -264,24 +263,43 @@ AttributeError: 'Student' object has no attribute '__name'
 
 但是如果外部代码要获取name和score怎么办？可以给Student类增加`get_name`和`get_score`这样的方法：
 
-```
+```py
+class Student(object):
+    ...
 
+    def get_name(self):
+        return self.__name
 
+    def get_score(self):
+        return self.__score
 ```
 
 如果又要允许外部代码修改score怎么办？可以再给Student类增加`set_score`方法：
 
-```
+```py
+class Student(object):
+    ...
 
+    def set_score(self, score):
+        self.__score = score
 ```
 
 你也许会问，原先那种直接通过`bart.score = 99`也可以修改啊，为什么要定义一个方法大费周折？因为在方法中，可以对参数做检查，避免传入无效的参数：
 
+```py
+class Student(object):
+    ...
+
+    def set_score(self, score):
+        if 0 <= score <= 100:
+            self.__score = score
+        else:
+            raise ValueError('bad score')
 ```
 
-```
+需要注意的是，在Python中，变量名类似`__xxx__`的，也就是以双下划线开头，并且以双下划线结尾的，是**特殊变量**，特殊变量是可以直接访问的，不是private变量，所以，不能用`__name__`、
 
-需要注意的是，在Python中，变量名类似`__xxx__`的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量，所以，不能用`__name__`、`__score__`这样的变量名。
+`__score__`这样的变量名。
 
 有些时候，你会看到以一个下划线开头的实例变量名，比如`_name`，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。
 
