@@ -113,7 +113,7 @@ class Student(object):
 
 注意到`__init__`方法的第一个参数永远是`self`，表示创建的实例本身，因此，在`__init__`方法内部，就可以把各种属性绑定到`self`，因为`self`就指向创建的实例本身。
 
-有了`__init__`方法，在创建实例的时候，就不能传入空的参数了，必须传入与`__init__`方法匹配的参数，**但`self`不需要传**，Python解释器自己会把实例变量传进去：
+有了`__init__`方法，在创建实例的时候，就不能传入空的参数了，必须传入与`__init__`方法匹配的参数，**但**`self`**不需要传**，Python解释器自己会把实例变量传进去：
 
 ```py
 >>> bart = Student('Bart Simpson', 59)
@@ -174,6 +174,25 @@ class Student(object):
             return 'B'
         else:
             return 'C'
+```
+
+同样的，`get_grade`方法可以直接在实例变量上调用，不需要知道内部实现细节：
+
+```py
+# -*- coding: utf-8 -*-
+class Student(object):
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+    def get_grade(self):
+        if self.score >= 90:
+            return 'A'
+        elif self.score >= 60:
+            return 'B'
+        else:
+            return 'C'
+
 ```
 
 
