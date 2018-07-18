@@ -56,5 +56,7 @@ AttributeError: 'Student' object has no attribute 'set_age'
 
 通常情况下，上面的`set_score`方法可以直接定义在class中，但动态绑定允许我们在程序运行的过程中动态给class加上功能，这在静态语言中很难实现。
 
+## 2.\_\_slots\_\_
+
 
 
