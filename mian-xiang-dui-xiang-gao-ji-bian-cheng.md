@@ -98,8 +98,6 @@ AttributeError: 'Student' object has no attribute 'score'
 
 `__slots__`**。**
 
-
-
 ## 二、使用@property
 
 ### 1.背景
@@ -125,7 +123,7 @@ class Student(object):
         if value < 0 or value > 100:
             raise ValueError('score must between 0 ~ 100!')
         self._score = value
-        
+
 >>> s = Student()
 >>> s.set_score(60) # ok!
 >>> s.get_score()
@@ -196,6 +194,8 @@ class Student(object):
 上面的birth是可读写属性，而age就是一个**只读属性**，因为age可以根据birth和当前时间计算出来。
 
 ### 3.多重继承
+
+##### （1）举例介绍
 
 
 
