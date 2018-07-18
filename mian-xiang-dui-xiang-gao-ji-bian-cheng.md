@@ -56,7 +56,22 @@ AttributeError: 'Student' object has no attribute 'set_age'
 
 通常情况下，上面的`set_score`方法可以直接定义在class中，但动态绑定允许我们在程序运行的过程中动态给class加上功能，这在静态语言中很难实现。
 
-## 2.\_\_slots\_\_
+### 2.\_\_slots\_\_
+
+##### （1）介绍
+
+\_\_slots\_\_用于限制实例的属性，只允许用户添加绑定指定的属性。
+
+##### （2）举例
+
+如果我们想要限制实例的属性怎么办？比如，只允许对Student实例添加`name`和`age`属性。
+
+为了达到限制的目的，Python允许在定义class的时候，定义一个特殊的`__slots__`变量，来限制该class实例能添加的属性：
+
+```
+class Student(object):
+    __slots__ = ('name', 'age') # 用tuple定义允许绑定的属性名称
+```
 
 
 
