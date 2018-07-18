@@ -9,6 +9,8 @@
   * [3.1字符编码](3zi-fu-chuan-bian-ma/31zi-fu-bian-ma.md)
   * [3.2Python字符串编码](3zi-fu-chuan-bian-ma/31zi-fu-bian-ma/32pythonzi-fu-chuan-bian-ma.md)
 * [4.数组](4shu-zu.md)
+  * [4.1list](4shu-zu/list.md)
+  * [4.2tuple](4shu-zu/tuple.md)
 * [5.条件判断和循环](tiao-jian-pan-duan-he-xun-huan.md)
 * [6.dict和set](zi-dian.md)
 * [7.函数基础](7han-shu-ji-chu.md)
