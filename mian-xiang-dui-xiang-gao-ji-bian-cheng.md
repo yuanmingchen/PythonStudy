@@ -197,7 +197,273 @@ class Student(object):
 
 ##### （1）举例介绍
 
+回忆一下`Animal`类层次的设计，假设我们要实现以下4种动物：
 
+* Dog - 狗狗；
+* Bat - 蝙蝠；
+* Parrot - 鹦鹉；
+* Ostrich - 鸵鸟。
+
+如果按照哺乳动物和鸟类归类，我们可以设计出这样的类的层次：
+
+```
+                ┌───────────────┐
+                │    Animal     │
+                └───────────────┘
+                        │
+           ┌────────────┴────────────┐
+           │                         │
+           ▼                         ▼
+    ┌─────────────┐           ┌─────────────┐
+    │   Mammal    │           │    Bird     │
+    └─────────────┘           └─────────────┘
+           │                         │
+     ┌─────┴──────┐            ┌─────┴──────┐
+     │            │            │            │
+     ▼            ▼            ▼            ▼
+┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
+│   Dog   │  │   Bat   │  │ Parrot  │  │ Ostrich │
+└─────────┘  └─────────┘  └─────────┘  └─────────┘
+```
+
+但是如果按照“能跑”和“能飞”来归类，我们就应该设计出这样的类的层次：
+
+```
+                ┌───────────────┐
+                │    Animal     │
+                └───────────────┘
+                        │
+           ┌────────────┴────────────┐
+           │                         │
+           ▼                         ▼
+    ┌─────────────┐           ┌─────────────┐
+    │  Runnable   │           │   Flyable   │
+    └─────────────┘           └─────────────┘
+           │                         │
+     ┌─────┴──────┐            ┌─────┴──────┐
+     │            │            │            │
+     ▼            ▼            ▼            ▼
+┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
+│   Dog   │  │ Ostrich │  │ Parrot  │  │   Bat   │
+└─────────┘  └─────────┘  └─────────┘  └─────────┘
+```
+
+如果要把上面的两种分类都包含进来，我们就得设计更多的层次：
+
+* 哺乳类：能跑的哺乳类，能飞的哺乳类；
+* 鸟类：能跑的鸟类，能飞的鸟类。
+
+这么一来，类的层次就复杂了：
+
+                ┌───────────────┐
+
+                │    Animal     │
+
+                └───────────────┘
+
+                        │
+
+           ┌────────────┴────────────┐
+
+           │                         │
+
+           ▼                         ▼
+
+    ┌─────────────┐           ┌─────────────┐
+
+    │   Mammal    │           │    Bird     │
+
+    └─────────────┘           └─────────────┘
+
+           │                         │
+
+     ┌─────┴──────┐            ┌─────┴──────┐
+
+     │            │            │            │
+
+     ▼            ▼            ▼            ▼
+
+┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
+
+│  MRun   │  │  MFly   │  │  BRun   │  │  BFly   │
+
+└─────────┘  └─────────┘  └─────────┘  └─────────┘
+
+     │            │            │            │
+
+     │            │            │            │
+
+     ▼            ▼            ▼            ▼
+
+┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
+
+│   Dog   │  │   Bat   │  │ Ostrich │  │ Parrot  │
+
+└─────────┘  └─────────┘  └─────────┘  └─────────┘
+
+如果要再增加“宠物类”和“非宠物类”，这么搞下去，类的数量会呈指数增长，很明显这样设计是不行的。
+
+##### （2）多重继承
+
+正确的做法是采用多重继承。首先，主要的类层次仍按照哺乳类和鸟类设计：
+
+```py
+class Animal(object):
+    pass
+
+# 大类:
+class Mammal(Animal):
+    pass
+
+class Bird(Animal):
+    pass
+
+# 各种动物:
+class Dog(Mammal):
+    pass
+
+class Bat(Mammal):
+    pass
+
+class Parrot(Bird):
+    pass
+
+class Ostrich(Bird):
+    pass
+```
+
+现在，我们要给动物再加上Runnable和Flyable的功能，只需要先定义好Runnable和Flyable的类：
+
+```py
+class Runnable(object):
+    def run(self):
+        print('Running...')
+
+class Flyable(object):
+    def fly(self):
+        print('Flying...')
+```
+
+对于需要`Runnable`或者`Flyable`功能的动物，就多继承一个`Runnable`或者`Flyable`，例如`Dog`：
+
+```
+class Dog(Mammal, Runnable):
+    pass
+    
+class Bat(Mammal, Flyable):
+    pass
+```
+
+通过多重继承，一个子类就可以同时获得多个父类的所有功能。
+
+##### （3）MixIn
+
+在设计类的继承关系时，通常，主线都是单一继承下来的，例如，Ostrich继承自Bird。但是，如果需要“混入”额外的功能，通过多重继承就可以实现，比如，让Ostrich除了继承自Bird外，再同时继承Runnable。这种设计通常称之为MixIn。
+
+为了更好地看出继承关系，我们把Runnable和Flyable改为RunnableMixIn和FlyableMixIn。类似的，你还可以定义出肉食动物CarnivorousMixIn和植食动物HerbivoresMixIn，让某个动物同时拥有好几个MixIn：
+
+```
+class Dog(Mammal, RunnableMixIn, CarnivorousMixIn):
+    pass
+```
+
+MixIn的目的就是给一个类增加多个功能，这样，在设计类的时候，我们优先考虑通过多重继承来组合多个MixIn的功能，而不是设计多层次的复杂的继承关系。
+
+Python自带的很多库也使用了MixIn。
+
+举个例子，Python自带了`TCPServer`和`UDPServer`这两类网络服务，而要同时服务多个用户就必须使用多进程或多线程模型，这两种模型由`ForkingMixIn`和`ThreadingMixIn`提供。通过组合，我们就可以创造出合适的服务来。
+
+比如，编写一个多进程模式的TCP服务，定义如下：
+
+```
+class MyTCPServer(TCPServer, ForkingMixIn):
+    pass
+```
+
+编写一个多线程模式的UDP服务，定义如下：
+
+```
+class MyUDPServer(UDPServer, ThreadingMixIn):
+    pass
+```
+
+如果你打算搞一个更先进的协程模型，可以编写一个`CoroutineMixIn`：
+
+```
+class MyTCPServer(TCPServer, CoroutineMixIn):
+    pass
+```
+
+这样一来，我们不需要复杂而庞大的继承链，只要选择**组合**不同的类的功能，就可以快速构造出所需的子类。
+
+由于Python允许使用多重继承，因此，MixIn就是一种常见的设计。
+
+只允许单一继承的语言（如Java）不能使用MixIn的设计。
+
+## 四、定制类
+
+### 1.介绍
+
+看到类似`__slots__`这种形如`__xxx__`的变量或者函数名就要注意，这些在Python中是有特殊用途的。
+
+`__slots__`我们已经知道怎么用了，`__len__()`方法我们也知道是为了能让class作用于`len()`函数。
+
+除此之外，Python的class中还有许多这样有特殊用途的函数，可以帮助我们定制类。这些方法就类似于Java中的toString、clone、equles等方法，通过重写这些方法，让函数拥有我们想要的常用功能。
+
+所谓的定制类，其实就是常用方法的重写，把这些功能变得更加符合我们的需求，实现方法的个性化定制。
+
+### 2.\_\_str\_\_
+
+我们先定义一个`Student`类，打印一个实例：
+
+```
+>>> class Student(object):
+...     def __init__(self, name):
+...         self.name = name
+...
+>>> print(Student('Michael'))
+<__main__.Student object at 0x109afb190>
+```
+
+打印出一堆`<__main__.Student object at 0x109afb190>`，不好看。
+
+怎么才能打印得好看呢？只需要定义好`__str__()`方法，返回一个好看的字符串就可以了：
+
+```
+>>> class Student(object):
+...     def __init__(self, name):
+...         self.name = name
+...     def __str__(self):
+...         return 'Student object (name: %s)' % self.name
+...
+>>> print(Student('Michael'))
+Student object (name: Michael)
+```
+
+这样打印出来的实例，不但好看，而且容易看出实例内部重要的数据。
+
+但是细心的朋友会发现直接敲变量不用`print`，打印出来的实例还是不好看：
+
+```
+>>> s = Student('Michael')
+>>> s
+<__main__.Student object at 0x109afb310>
+```
+
+这是因为直接显示变量调用的不是\_\_str\_\_\(\)，而是\_\_repr\_\_\(\)，两者的区别是\_\_str\_\_\(\)返回用户看到的字符串，而\_\_repr\_\_\(\)返回程序开发者看到的字符串，也就是说，**\_\_repr\_\_\(\)是为调试服务的**。
+
+解决办法是再定义一个`__repr__()`。但是通常`__str__()`和`__repr__()`代码都是一样的，所以，有个偷懒的写法：
+
+```
+class Student(object):
+    def __init__(self, name):
+        self.name = name
+    def __str__(self):
+        return 'Student object (name=%s)' % self.name
+    __repr__ = __str__
+```
+
+### 3.\_\_iter\_\_
 
 
 
