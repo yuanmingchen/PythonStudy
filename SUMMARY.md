@@ -13,6 +13,7 @@
   * [4.2tuple](4shu-zu/tuple.md)
 * [5.条件判断和循环](tiao-jian-pan-duan-he-xun-huan.md)
   * [5.1条件判断](tiao-jian-pan-duan-he-xun-huan/51tiao-jian-pan-duan.md)
+  * [5.2循环](tiao-jian-pan-duan-he-xun-huan/52xun-huan.md)
 * [6.dict和set](zi-dian.md)
 * [7.函数基础](7han-shu-ji-chu.md)
 * [8.函数高级](8han-shu-gao-ji.md)
