@@ -48,6 +48,11 @@
   * [12.2使用@property](mian-xiang-dui-xiang-gao-ji-bian-cheng/122shi-7528-property.md)
   * [12.3多重继承](mian-xiang-dui-xiang-gao-ji-bian-cheng/123duo-zhong-ji-cheng.md)
   * [12.4定制类](mian-xiang-dui-xiang-gao-ji-bian-cheng/124ding-zhi-lei.md)
+    * [12.4.1\_\_str\_\_](mian-xiang-dui-xiang-gao-ji-bian-cheng/124ding-zhi-lei/1241str.md)
+    * [12.4.2\_\_iter\_\_](mian-xiang-dui-xiang-gao-ji-bian-cheng/124ding-zhi-lei/1242iter.md)
+    * [12.4.3\_\_getitem\_\_](mian-xiang-dui-xiang-gao-ji-bian-cheng/124ding-zhi-lei/1243getitem.md)
+    * [12.4.4\_\_getattr\_\_](mian-xiang-dui-xiang-gao-ji-bian-cheng/124ding-zhi-lei/1244getattr.md)
+    * [12.4.5\_\_call\_\_](mian-xiang-dui-xiang-gao-ji-bian-cheng/124ding-zhi-lei/1245call.md)
   * [12.5使用枚举类](mian-xiang-dui-xiang-gao-ji-bian-cheng/125shi-yong-mei-ju-lei.md)
   * [12.6使用元类](mian-xiang-dui-xiang-gao-ji-bian-cheng/126shi-yong-yuan-lei.md)
 
