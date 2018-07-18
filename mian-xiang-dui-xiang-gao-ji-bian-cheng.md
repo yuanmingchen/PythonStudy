@@ -2,7 +2,7 @@
 
 ## 一、使用\_\_slots\_\_
 
-### 1.
+### 1.动态语言绑定属性方法
 
 正常情况下，当我们定义了一个class，创建了一个class的实例后，我们可以给该实例绑定任何属性和方法，这就是动态语言的灵活性。先定义class：
 
@@ -53,6 +53,8 @@ AttributeError: 'Student' object has no attribute 'set_age'
 >>> s2.score
 99
 ```
+
+通常情况下，上面的`set_score`方法可以直接定义在class中，但动态绑定允许我们在程序运行的过程中动态给class加上功能，这在静态语言中很难实现。
 
 
 
