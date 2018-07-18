@@ -29,6 +29,7 @@
   * [8.4生成器](8han-shu-gao-ji/84sheng-cheng-qi.md)
   * [8.5迭代器](8han-shu-gao-ji/85die-dai-qi.md)
 * [9.函数式编程](9han-shu-shi-bian-cheng.md)
+  * [9.1高阶函数](9han-shu-shi-bian-cheng/gao-jie-han-shu.md)
 * [10.模块](10mo-kuai.md)
 * [11.面向对象编程](11mian-xiang-dui-xiang-bian-cheng.md)
 * [12.面向对象高级编程](mian-xiang-dui-xiang-gao-ji-bian-cheng.md)
