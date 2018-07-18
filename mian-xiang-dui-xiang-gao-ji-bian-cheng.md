@@ -60,7 +60,7 @@ AttributeError: 'Student' object has no attribute 'set_age'
 
 ##### （1）介绍
 
-\_\_slots\_\_用于限制实例的属性，只允许用户添加绑定指定的属性。
+\_\_slots\_\_用于限制实例的属性，只允许用户添加绑定指定的属性。注意slots前后都有**两个下划线**！
 
 ##### （2）举例
 
@@ -71,8 +71,8 @@ AttributeError: 'Student' object has no attribute 'set_age'
 ```py
 class Student(object):
     __slots__ = ('name', 'age') # 用tuple定义允许绑定的属性名称
-    
-    
+
+
 >>> s = Student() # 创建新的实例
 >>> s.name = 'Michael' # 绑定属性'name'
 >>> s.age = 25 # 绑定属性'age'
@@ -94,7 +94,9 @@ AttributeError: 'Student' object has no attribute 'score'
 >>> g.score = 9999
 ```
 
-除非在子类中也定义`__slots__`，这样，子类实例允许定义的属性就是自身的`__slots__`加上父类的
+除非在子类中也定义`__slots__`，这样，**子类实例允许定义的属性就是自身的`__slots__`加上父类的**
 
-`__slots__`。
+**`__slots__`。**
+
+
 
