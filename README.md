@@ -6,7 +6,3 @@ python学习菜鸡笔记。
 
 python中文文档：[https://yiyibooks.cn/xx/python\_352/index.html](https://yiyibooks.cn/xx/python_352/index.html)
 
-各章内容概括：
-
-![](/assets/未命名文件%286%29.png)
-
