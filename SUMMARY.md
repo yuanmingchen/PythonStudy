@@ -30,7 +30,13 @@
   * [8.5迭代器](8han-shu-gao-ji/85die-dai-qi.md)
 * [9.函数式编程](9han-shu-shi-bian-cheng.md)
   * [9.1高阶函数](9han-shu-shi-bian-cheng/gao-jie-han-shu.md)
+  * [9.2返回函数](9han-shu-shi-bian-cheng/92fan-hui-han-shu.md)
+  * [9.3匿名函数](9han-shu-shi-bian-cheng/93gao-jie-han-shu.md)
+  * [9.4装饰器](9han-shu-shi-bian-cheng/94zhuang-shi-qi.md)
+  * [9.5偏函数](9han-shu-shi-bian-cheng/95pian-han-shu.md)
 * [10.模块](10mo-kuai.md)
+  * [10.1使用模块](10mo-kuai/101shi-yong-mo-kuai.md)
+  * [10.2使用第三方模块](10mo-kuai/102shi-yong-di-san-fang-mo-kuai.md)
 * [11.面向对象编程](11mian-xiang-dui-xiang-bian-cheng.md)
 * [12.面向对象高级编程](mian-xiang-dui-xiang-gao-ji-bian-cheng.md)
 
