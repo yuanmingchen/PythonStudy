@@ -665,9 +665,9 @@ class Student(object):
 25
 ```
 
-**注意，只有在没有找到属性的情况下，才调用`__getattr__`，已有的属性，比如`name`，不会在`__getattr__`中查找。**
+**注意，只有在没有找到属性的情况下，才调用**`__getattr__`**，已有的属性，比如**`name`**，不会在**`__getattr__`**中查找。**
 
-此外，注意到任意调用如`s.abc`都会返回`None`，这是因为我们定义的`__getattr__`**默认返回就是`None`**。要让class只响应特定的几个属性，我们就要按照约定，**抛出`AttributeError`的错误：**
+此外，注意到任意调用如`s.abc`都会返回`None`，这是因为我们定义的`__getattr__`**默认返回就是**`None`。要让class只响应特定的几个属性，我们就要按照约定，**抛出**`AttributeError`**的错误：**
 
 ```py
 class Student(object):
@@ -741,5 +741,5 @@ Chain().users('michael').repos
 
   …………
 
-使用了链式调用之后，
+使用了链式调用之后，当增加新的api时，不必在配置文件中添加新的内容。
 
