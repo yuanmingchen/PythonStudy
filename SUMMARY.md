@@ -12,4 +12,5 @@
 * [9.函数式编程](9han-shu-shi-bian-cheng.md)
 * [10.模块](10mo-kuai.md)
 * [11.面向对象编程](11mian-xiang-dui-xiang-bian-cheng.md)
+* [12.面向对象高级编程](mian-xiang-dui-xiang-gao-ji-bian-cheng.md)
 
