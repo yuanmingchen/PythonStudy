@@ -16,6 +16,7 @@
   * [5.2循环](tiao-jian-pan-duan-he-xun-huan/52xun-huan.md)
 * [6.dict和set](zi-dian.md)
   * [6.1dict](zi-dian/61dict.md)
+  * [6.2set](zi-dian/62set.md)
 * [7.函数基础](7han-shu-ji-chu.md)
 * [8.函数高级](8han-shu-gao-ji.md)
 * [9.函数式编程](9han-shu-shi-bian-cheng.md)
