@@ -211,7 +211,7 @@ argparse.py: error: option --foo is required
 
 ##### （7）**dest**
 
-dest 允许自定义ArgumentParser的参数属性名称
+dest 允许自定义ArgumentParser的参数属性名称，这个的意思是可以为一个参数定义多个名字，并自定义解析后返回的名字，比如用户执行时用的是参数“--x”，解析后的返回结果内的参数名可以指定为y。
 
 ```py
 #例一
@@ -222,7 +222,7 @@ Namespace(bar='XXX')
 
 #例二
 >>> parser = argparse.ArgumentParser()
->>> parser.add_argument('-f', '--foo-bar', '--foo')
+>>> parser.add_argument('-f', '--foo_bar', '--foo')
 >>> parser.add_argument('-x', '-y')
 >>> parser.parse_args('-f 1 -x 2'.split())
 Namespace(foo_bar='1', x='2')
@@ -237,7 +237,8 @@ Namespace(foo_bar='1', x='2')
 Namespace(bar='XXX')
 ```
 
-* **第三步使用**parser.parse\_args\(\)解析参数，返回解析的参数结果args，获取猴哥参数的方式是`args.参数名`
+* **第三步**使用parser.parse\_args\(\)解析参数，返回解析的参数结果args，获取猴哥参数的方式是`args.参数名`
+
   ```py
   parser = argparse.ArgumentParser(description="Pre-processing Movie Review Dataset")
   parser.add_argument("--place", type=str, default="local",
