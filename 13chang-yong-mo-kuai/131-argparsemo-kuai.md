@@ -77,7 +77,7 @@ prog.py: error: argument N: invalid int value: 'a'
 
 其实很简单：
 
-* 首先创建一个ArgumentParser类的实例，这个类恰如其名，参数解析器嘛，用来解析参数的，我们可以在创建参数解析器时传入一些**方法参数**，比如示例中的description**方法参数**，就是用于介绍脚本的功能的，当用户用-h查看脚本帮助时会看到这个介绍。
+* **第一步**首先创建一个ArgumentParser类的实例，这个类恰如其名，参数解析器嘛，用来解析参数的，我们可以在创建参数解析器时传入一些**方法参数**，比如示例中的description**方法参数**，就是用于介绍脚本的功能的，当用户用-h查看脚本帮助时会看到这个介绍。
 
 ```py
 argparse.ArgumentParser(description='Process some integers.')
@@ -98,7 +98,7 @@ argparse.ArgumentParser(prog=None,#传入一个字符串，自定义程序名
                         add_help=True)  #设为False将禁用-h,--help帮助选项
 ```
 
-* 第二步是重点，为参数解析器添加我们想解析的参数：
+* **第二步**是重点，为参数解析器添加我们想解析的参数：
 
 ```py
 parser.add_argument('integers', metavar='N', type=int, nargs='+',
@@ -235,8 +235,20 @@ Namespace(foo_bar='1', x='2')
 >>> parser.add_argument('--foo', dest='bar')
 >>> parser.parse_args('--foo XXX'.split())
 Namespace(bar='XXX')
-
 ```
+
+* **第三步使用**parser.parse\_args\(\)解析参数，返回解析的参数结果args，获取猴哥参数的方式是`args.参数名`
+  ```py
+  parser = argparse.ArgumentParser(description="Pre-processing Movie Review Dataset")
+  parser.add_argument("--place", type=str, default="local",
+                          help="decide the location of LTP and data")
+  parser.add_argument("--has_valid", action="store_true",
+                          help="whether have 'real' validation data for tuning the model")
+
+  args = parser.parse_args()
+  print(args.place)
+  print(args.has_valid)
+  ```
 
 
 
