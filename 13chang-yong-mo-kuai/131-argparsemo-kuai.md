@@ -28,7 +28,7 @@ $ python prog.py a b c
 
 ## 3、使用方法
 
-```
+```py
 #arg_parse.py
 #coding:utf-8
 import argparse
@@ -39,6 +39,32 @@ parser.add_argument('--sum', dest='accumulate', action='store_const',const=sum, 
                       help='sum the integers (default: find the max)')
 args = parser.parse_args()
 print(args.accumulate(args.integers))
+```
+
+上面就是使用argparse模块的一个例子，首先来看一下效果吧，将上述代码保存为arg\_parse.py，在命令行运行该脚本。使用-h选项可以查看帮助信息：
+
+```
+$ python prog.py -h  #查看脚本帮助信息
+usage: prog.py [-h] [--sum] N [N ...]
+Process some integers.
+positional arguments:
+ N           an integer for the accumulator
+optional arguments:
+ -h, --help  show this help message and exit
+ --sum       sum the integers (default: find the max)
+```
+
+再来看一下执行结果和报错功能：
+
+```
+$ python prog.py 1 2 3 4
+4
+$ python prog.py 1 2 3 4 --sum
+10
+
+$ python prog.py a b c
+usage: prog.py [-h] [--sum] N [N ...]
+prog.py: error: argument N: invalid int value: 'a'
 ```
 
 
